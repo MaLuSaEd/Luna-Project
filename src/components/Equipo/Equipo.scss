@@ -1,0 +1,10 @@
+.Integrantes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &_fila{
+        display: flex;
+        flex-direction: row;
+    }
+}
