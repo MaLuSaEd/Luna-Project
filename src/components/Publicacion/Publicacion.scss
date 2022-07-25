@@ -1,15 +1,10 @@
-.Integrante{
+.Publicacion{
     display: flex;
     flex-direction: column;
     width: 30%;
     justify-content: space-between;
     img{
-        height: 10em;
+        height: auto;
         width: 10em;
-    }
-    .countProd{
-        display: flex;
-        justify-content: center;
-        gap:1em
     }
 }

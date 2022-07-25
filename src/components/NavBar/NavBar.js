@@ -9,6 +9,7 @@ export default function Navbar(){
             <ul>
                 <CustomLink to = '/SobreLuna'>Sobre Luna</CustomLink>
                 <CustomLink to = '/Proyectos'>Proyectos</CustomLink>
+                <CustomLink to = '/Editorial'>Editorial</CustomLink>
                 <CustomLink to = '/Apoyo'><img className='item-Donation' src='/assets/Donation.png' alt='Donation'></img></CustomLink>
                
             </ul>

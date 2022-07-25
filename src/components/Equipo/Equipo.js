@@ -1,6 +1,18 @@
 import Integrante from "../Integrante/Integrante"
+import { useEffect } from "react"
 import './Equipo.scss'
 const Equipo = () => {
+
+    // 1. Mount -> Crea "con []"
+    // 2. Update/Change/Actualizacion -> cambio de valor State/prop "sin []"
+    // 3. Unmount/Desmontaje -> Destruye, desaparece
+
+    useEffect(() => {
+        //console.log("Ejecuto en fase de montage")
+        //fetch().then(
+        //    setProduct()
+        //)
+    }, [])
     return(
         <div>
             <h1>EQUIPO</h1>

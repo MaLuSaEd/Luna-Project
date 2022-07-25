@@ -5,6 +5,7 @@ import Apoyo from './pages/Apoyo';
 import Proyectos from './pages/Proyectos';
 import SobreLuna from './pages/SobreLuna';
 import Home from './pages/Home'; 
+import Editorial from './pages/Editorial';
 import {Route, Routes} from  "react-router-dom"
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
           <Route path = "/SobreLuna" element = {<SobreLuna /> } />
           <Route path = "/Proyectos" element = {<Proyectos /> } />
           <Route path = "/Apoyo" element = {<Apoyo /> } />
+          <Route path = "/Editorial" element = {<Editorial /> } />
         </Routes>
       </div> 
       
