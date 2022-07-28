@@ -1,11 +1,11 @@
 .Publicaciones{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    &_fila{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1em;
+    grid-gap: 1em;
+    &_publicacion{
         display: flex;
-        flex-direction: row;
-        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 }

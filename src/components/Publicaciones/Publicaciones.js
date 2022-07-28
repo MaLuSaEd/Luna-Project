@@ -1,14 +1,34 @@
 import '../Publicaciones/Publicaciones.scss'
 import '../Publicacion/Publicacion'
-import Publicacion from '../Publicacion/Publicacion'
+import PublicacionLits from '../PublicacionList/PublicacionList'
+import publicaciones_list from '../../utils/publicacionesMock'
+import { useState, useEffect } from 'react'
 const Publicaciones = () => {
+    
+    useEffect(()=>{
+        const getProducts =  new Promise((resolve, reject) => {
+            setTimeout(()=>{resolve(publicaciones_list)},2000)
+        })
+        getProducts
+            .then((res) => {  // Respuesta Ok
+                //console.log("Productos: ", res)
+                setListPublicaciones(res)
+            })
+            .catch((error) => { // Falla la respuesta 
+                console.log("la llamada fallo")
+            })
+            .finally(() => { //Siempre que termina por ok o fallo
+                //setSpinner(false)
+            })
+    },[])
+
+    
+    const [listPublicaciones, setListPublicaciones] = useState([])
 
     return(
         <div>
             <div className="Publicaciones">
-                <div className="Publicaciones_fila">
-                < Publicacion img = 'peligrosfumarcama.webp' autor ='Mariana Enriquez'  nombre= 'Los peligros de fumar en la cama' descripcion= 'Doce cuentos en los que lo terroríﬁco se inﬁltra en lo cotidiano. Doce relatos perturbadores que llevan el género de terror a una nueva dimensión.' stock = {6} />
-                </div>
+                <PublicacionLits dataProducts={listPublicaciones}/>
             </div>
         </div>
     )
