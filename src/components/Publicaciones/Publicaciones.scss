@@ -1,11 +1,9 @@
 .Publicaciones{
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 1em;
-    grid-gap: 1em;
-    &_publicacion{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    grid-template-columns: repeat(5,1fr);
+    padding-top: 1em;
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 1em;
+    gap: 5em;
 }

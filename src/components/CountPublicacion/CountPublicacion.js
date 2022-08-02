@@ -23,12 +23,15 @@ export default function CountPublicacion({stock, action}){
     return( 
         <div className='container-col'>
             <p> Quedan: {stockVar}</p>
-            <div className='countProd'>
-            <button onClick={subtractNumber}>-</button>
-            <p>{contador}</p>
-            <button onClick = {addNumber}>+</button>
+            <div className='container-row'>
+                <button onClick ={action}> Comprar </button>
+                <div className='countProd'>
+                    <button onClick={subtractNumber}>-</button>
+                    <p>{contador}</p>
+                    <button onClick = {addNumber}>+</button>
+                </div>
             </div>
-            <button onClick ={action}> Comprar </button>
+            
         </div>
         
 

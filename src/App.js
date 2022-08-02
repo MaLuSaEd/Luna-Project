@@ -7,8 +7,8 @@ import SobreLuna from './pages/SobreLuna';
 import Home from './pages/Home'; 
 import Editorial from './pages/Editorial';
 import {Route, Routes} from  "react-router-dom"
-function App() {
-  
+
+function App() {  
   return (
     //JSX
       <>
@@ -21,11 +21,9 @@ function App() {
           <Route path = "/Apoyo" element = {<Apoyo /> } />
           <Route path = "/Editorial" element = {<Editorial /> } />
         </Routes>
+
       </div> 
-      
-      </>
-        
+      </>       
   );
 }
-
 export default App;

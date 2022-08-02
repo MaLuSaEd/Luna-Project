@@ -1,9 +1,9 @@
 import '../Publicaciones/Publicaciones.scss'
 import '../Publicacion/Publicacion'
-import PublicacionLits from '../PublicacionList/PublicacionList'
+import PublicacionDetailContainer from '../PublicacionDetailContainer/PublicacionDetailContainer'
 import publicaciones_list from '../../utils/publicacionesMock'
 import { useState, useEffect } from 'react'
-const Publicaciones = () => {
+const GetPublicacion = ({id}) => {
     
     useEffect(()=>{
         const getProducts =  new Promise((resolve, reject) => {
@@ -22,16 +22,24 @@ const Publicaciones = () => {
             })
     },[])
 
-    
+
     const [listPublicaciones, setListPublicaciones] = useState([])
 
     return(
         <>
-            <div className="Publicaciones">
-                <PublicacionLits dataProducts={listPublicaciones}/>
-            </div>
+            {listPublicaciones.map(publi => {
+                if(publi.id === id){
+                        return(
+                                <>
+                                <PublicacionDetailContainer key={publi.id}  img = {publi.img} autor={publi.autor} nombre={publi.nombre} descripcion={publi.descripcion} stock={publi.stock} precio={publi.precio} id = {publi.id} />
+                                </>
+                        )
+                }else{
+                    return (<></>)
+                }
+                        })}
         </>
     )
 }
 
-export default Publicaciones
+export default GetPublicacion

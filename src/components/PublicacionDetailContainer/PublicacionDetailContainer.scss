@@ -1,9 +1,27 @@
-   .Publicacion{
+.cont-col{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    background-color: white;
+    margin-bottom: 1em;
+    &-Imagen{
+        height: auto;
+        width: 10em;
+    }
+
+    border: 0.5em solid #1F1F1F;
+    border-radius: 2em;
+
+    padding: 1em;
+
+
+    .Publicacion{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
-        justify-content: center;
-        gap: 1em;
+        justify-content: space-evenly;
+        gap: 5em;
         p{
             margin : 0
         }
@@ -11,9 +29,9 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            width: 100%;
+            width: 50%;
             &-Imagen{
-                width: 100%;
+                width: 18em;
                 height: auto;
             }
 
@@ -22,12 +40,12 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 0.5em;
+            gap: 2em;
             &-Nombre{
-                font-size: 1.5em;
+                font-size: xx-large;
             }
             &-Autor{
-                font-size: 1em;
+                font-size: larger;
             }
             &-Descripcion{
                 text-align: justify;
@@ -36,6 +54,6 @@
         }
     }
    
-
+}
 
 
