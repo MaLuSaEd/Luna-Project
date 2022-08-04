@@ -3,11 +3,15 @@ import '../CountPublicacion/CountPublicacion'
 import CountPublicacion from '../CountPublicacion/CountPublicacion'
 import Modal from '../Modal/Modal'
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 export default function Publicacion({img,autor, nombre, descripcion,precio, stock,id}){
     const [isOpen, setIsOpen] = useState(false);
     return(
+       
             <div className='Publicacion'>
+                 <Link to = {`/Editorial/${id}`}> 
                 <div className='Publicacion-imgBx' ><img className='Publicacion-imgBx-Imagen' src = {` /assets/Publicaciones/${img}`} alt="img-publicacion"/> </div>
+                </Link>
                 <div className='Publicacion-details'>
                     <p className='Publicacion-details-Nombre'>{nombre}</p>
                     <p className='Publicacion-details-Autor'> {autor}</p>
@@ -19,8 +23,8 @@ export default function Publicacion({img,autor, nombre, descripcion,precio, stoc
                     {isOpen && <Modal setIsOpen={setIsOpen} id = {id}/> }
                 </div>
                 <CountPublicacion stock = {stock}/>
-                            </div>
-            
+            </div>
+  
             
     )
 }
