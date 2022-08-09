@@ -1,7 +1,12 @@
 import './PublicacionDetailContainer.scss'
 import '../CountPublicacion/CountPublicacion'
+import CountPublicacion from '../CountPublicacion/CountPublicacion'
+import { useState } from 'react'
+import {Link} from 'react-router-dom'
 export default function PublicacionDetailContainer({img,autor, nombre, descripcion,precio, stock}){
 
+    const [quantitySelected, setQuantitySelected] = useState(0) 
+    
     return(
         <div className='cont-col'>
             <div className='Publicacion'>
@@ -13,6 +18,12 @@ export default function PublicacionDetailContainer({img,autor, nombre, descripci
                     <p className='Publicacion-details-Descripcion'>{descripcion}</p>
                 </div>
             </div>
+            {console.log(quantitySelected)}
+            {
+                quantitySelected > 0 ? <Link to = '/Apoyo'> TERMINAR COMPRA </Link>: <CountPublicacion stock = {stock} setQuantitySelected = {setQuantitySelected}/>
+            }
+            
+            
         </div>
     )
 }

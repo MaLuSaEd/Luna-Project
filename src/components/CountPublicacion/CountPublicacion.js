@@ -1,7 +1,7 @@
 import '../CountPublicacion/CountPublicacion.scss'
 import  {useState} from 'react'
 
-export default function CountPublicacion({stock, action}){
+export default function CountPublicacion({stock, setQuantitySelected}){
 
     const [contador, setContador]  = useState(0)
     const [stockVar, setStock] = useState(stock)
@@ -20,17 +20,22 @@ export default function CountPublicacion({stock, action}){
         }
     }
 
+    const onAdd = () => {
+        setQuantitySelected(contador)
+    }
+
     return( 
         <div className='container-col'>
             <p> Quedan: {stockVar}</p>
             <div className='container-row'>
-                <button onClick ={action}> Comprar </button>
+                
                 <div className='countProd'>
                     <button onClick={subtractNumber}>-</button>
                     <p>{contador}</p>
                     <button onClick = {addNumber}>+</button>
                 </div>
             </div>
+            <button onClick ={onAdd}> COMPRAR </button>
             
         </div>
         

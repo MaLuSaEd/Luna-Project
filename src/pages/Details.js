@@ -27,11 +27,11 @@ const Details = () => {
     const id = useParams().id
     return (
         <>
-        {listPublicaciones.map(publi => {
+        {listPublicaciones.map((publi, i) => {
             if(publi.id.toString() === id.toString()){
                     return(
-                            <div>
-                                <PublicacionDetailContainer key={publi.id}  img = {publi.img} autor={publi.autor} nombre={publi.nombre} descripcion={publi.descripcion} stock={publi.stock} precio={publi.precio} id = {publi.id} />
+                            <div key={i}>
+                                <PublicacionDetailContainer  img = {publi.img} autor={publi.autor} nombre={publi.nombre} descripcion={publi.descripcion} stock={publi.stock} precio={publi.precio} id = {publi.id} />
                             </div>
                     )
             }else{

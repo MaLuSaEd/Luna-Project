@@ -7,7 +7,8 @@ const Publicaciones = () => {
     
     useEffect(()=>{
         const getProducts =  new Promise((resolve, reject) => {
-            setTimeout(()=>{resolve(publicaciones_list)},2000)
+            //setTimeout(()=>{resolve(publicaciones_list)},2000)
+            resolve(publicaciones_list)
         })
         getProducts
             .then((res) => {  // Respuesta Ok
